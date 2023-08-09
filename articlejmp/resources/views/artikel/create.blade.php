@@ -24,10 +24,13 @@
                                     <input type="file" class="form-control bg-light border-0" placeholder="cover" style="height: 55px;" name="cover">
                                 </div>
                                 <div class="col-xl-12">
+                                    <input type="text" class="form-control bg-light border-0" placeholder="alt" style="height: 55px;" name="alt">
+                                </div>
+                                <div class="col-xl-12">
                                     <select class="form-select bg-light border-0" style="height: 55px;" name="id_kategori">
                                         <option selected>Select A Service</option>
                                         @foreach ($kategori as $kategori)
-                                        <option value="{{$kategori->id_kategori}}">{{$kategori->nama_kategori}}</option>
+                                        <option value="{{$kategori->id}}">{{$kategori->nama_kategori}}</option>
                                         @endforeach
                                     </select>
                                 </div>

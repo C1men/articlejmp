@@ -11,4 +11,9 @@ class article extends Model
     protected $table = 'article';
 
     Protected $guarded = [];
+
+    public function kategori()
+    {
+        return $this->belongsTo(Kategori::class, 'id_kategori');
+    }
 }

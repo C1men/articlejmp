@@ -17,7 +17,7 @@ class ArticleController extends Controller
     {
         $article=article::all();
 
-        return view ('article.index', compact('article'));
+        return view ('artikel.index', compact('article'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ArticleController extends Controller
     {
         $kategori=kategori::all();
         
-        return view ('article.create', compact('kategori'));
+        return view ('artikel.create', compact('kategori'));
     }
 
     /**
@@ -38,6 +38,7 @@ class ArticleController extends Controller
         $request->validate([
             'judul' => 'required',
             'cover' => 'required|image|mimes:jpeg,png,heic,svg,gif|max:2048',
+            'cover' => 'required',
             'id_kategori' => 'required',
             'desc' => 'required',
             'id_user' => 'required'
@@ -56,13 +57,14 @@ class ArticleController extends Controller
         article::create ([
             'judul' => $request->input('judul'),
             'cover' => $filename,
+            'alt' => $request->input('alt'),
             'id_kategori' => $request->input('id_kategori'),
             'desc' => $request->input('desc'),
             'slug' => Str::slug($request->input('judul')),
             'id_user' => $request->input('id_user'),
         ]);
 
-        return redirect()->route('article.index');
+        return redirect()->route('artikel.index');
     }
 
     /**
