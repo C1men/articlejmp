@@ -1,9 +1,10 @@
-<head>
+
     <meta charset="utf-8">
-    <title>Startup - Startup Website Template</title>
+    <title>Jaya Mulya Plastik</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
+    <link rel="shortcut icon" href="{{asset('JMP Biru/img/logo.jpg')}}" type="image/x-icon" />
 
     <!-- Favicon -->
     <link href="{{asset('JMP Biru/img/favicon.ico')}}" rel="icon">
@@ -26,4 +27,3 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('JMP Biru/css/style.css')}}" rel="stylesheet">
-</head>
