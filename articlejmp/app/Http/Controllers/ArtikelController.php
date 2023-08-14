@@ -44,8 +44,10 @@ class ArtikelController extends Controller
     public function show(string $slug)
     {
         $detail=article::where(['slug'=>$slug])->first();
+        $kategori=kategori::all();
+        $sidearticle=article::orderBy('id', 'DESC')->limit(5)->get();
 
-        return view ('detail', compact('detail'));
+        return view ('detail', compact('detail', 'kategori', 'sidearticle'));
     }
 
     /**
@@ -53,7 +55,7 @@ class ArtikelController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**
@@ -61,7 +63,7 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        
     }
 
     /**
@@ -69,6 +71,6 @@ class ArtikelController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
     }
 }

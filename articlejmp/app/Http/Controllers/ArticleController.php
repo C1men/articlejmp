@@ -80,7 +80,9 @@ class ArticleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $artikel = article::find($id);
+        $kategori=kategori::all();
+        return view('artikel.edit', compact('artikel','kategori'));
     }
 
     /**
@@ -88,7 +90,48 @@ class ArticleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'judul' => 'required',
+            'cover' => 'required|image|mimes:jpeg,png,heic,svg,gif|max:2048',
+            'alt' => 'required',
+            'id_kategori' => 'required',
+            'desc' => 'required'
+        ]);
+
+        $artikel = Artikel::findOrFail($id);
+
+        $fileName = $artikel->cover; // Tetap menggunakan nama file yang ada sebelumnya
+
+        if ($request->hasFile('cover')) {
+            $request->validate([
+                'cover' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            ]);
+
+            $file = $request->file('cover');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('img'), $fileName);
+
+            // Hapus cover lama jika berbeda dengan nama file sebelumnya
+            if ($artikel->cover != $fileName) {
+                $coverLamaPath = public_path('img') . '/' . $artikel->cover;
+                if (file_exists($coverLamaPath)) {
+                    unlink($coverLamaPath);
+                }
+            }
+        }
+       
+
+        $artikel->update([
+            'id_kategori' => $request->input('id_kategori'),
+            'judul' => $request->input('judul'),
+            'cover' => $fileName, // Simpan nama file dalam basis data
+            'desc' => $request->input('desc'),
+            'alt' => $request->input('alt'),
+            'slug' => Str::slug($request->input('judul')),
+            'id_user' => auth()->id(),
+        ]);
+
+        return redirect()->route('artikel.index');
     }
 
     /**
@@ -96,6 +139,9 @@ class ArticleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $artikel = article::findOrFail($id);
+        $artikel->delete();
+
+        return redirect()->route('artikel.index');
     }
 }

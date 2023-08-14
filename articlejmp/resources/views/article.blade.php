@@ -68,20 +68,28 @@
                     <div class="row g-5">
                         @foreach ($article as $article)
                         <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
+                        <div class="blog-item bg-light rounded overflow-hidden">
+                            <a href="{{url('article', $article->slug)}}">
                                 <div class="blog-img position-relative overflow-hidden">
                                     <img class="img-fluid" src="{{asset('img/' .$article->cover)}}" alt="{{$article->alt}}">
-                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="{{url('detail', $article->slug)}}">{{$article->kategori->nama_kategori}}</a>
+                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="{{url('article', $article->slug)}}">{{$article->kategori->nama_kategori}}</a>
                                 </div>
+                            </a>
+                                <!-- <div class="blog-img position-relative overflow-hidden">
+                                    <img class="img-fluid" src="{{asset('img/' .$article->cover)}}" alt="{{$article->alt}}">
+                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="{{url('article', $article->slug)}}">{{$article->kategori->nama_kategori}}</a>
+                                </div> -->
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
                                         <small class="me-3"><i class="far fa-user text-primary me-2"></i>{{$article->id_user}}</small>
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ date('d-m-Y', strtotime($article->created_at))}}</small>
                                     </div>
+                                    <a href="{{url('article', $article->slug)}}">
                                     <h4 class="mb-3">{{$article->judul}}</h4>
-                                    <p>{!!$article->desc!!}</p>
+                                    <p>{!! Str::limit($article->desc, 200)!!}</p>
                                     <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                                </div>
+                                    </a>
+                                    </div>
                             </div>
                         </div>
                         @endforeach
@@ -139,9 +147,12 @@
                         </div>
                         @foreach ($sidearticle as $sa)
                         <div class="d-flex rounded overflow-hidden mb-3">
+                            <a href="{{url('article', $article->slug)}}">
                             <img class="img-fluid" src="{{asset('img/' .$sa->cover)}}" alt="{{$sa->alt}}" style="width: 100px; height: 100px; object-fit: cover;">
-                            <a href="" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">{{$sa->judul}}
+                            <a href="{{url('article', $article->slug)}}" class="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">{{$sa->judul}}
                             </a>
+                            </a>
+                           
                         </div>
                         @endforeach
                     </div>

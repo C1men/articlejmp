@@ -29,6 +29,13 @@ Route::get('/about', function () {
 
 Route::resource('kategori', KategoriController::class);
 
-Route::resource('artikel', ArticleController::class);
+
 
 Route::resource('article', ArtikelController::class);
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::resource('artikel', ArticleController::class);
+});

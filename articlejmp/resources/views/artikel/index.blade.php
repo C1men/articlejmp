@@ -9,6 +9,10 @@
     <button  class="btn btn-primary btn-lg mb-5" type="">
     <a class="text-light" href="{{route ('artikel.create')}}">Buat Article</a>
     </button>
+    <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat"
+                  onclick="document.getElementById('logout-form').submit()">Sign out</a>
+      </div>
     <table class="table table-dark">
     <thead>
     <tr>
@@ -34,7 +38,7 @@
       <td><img src="{{asset('img/' .$article->cover)}}" alt="" style="max-width:100px; max-height:75px;"></td>
       <td>{{$article->alt}}</td>
       <td>{{$article->id_kategori}}</td>
-      <td>{!!$article->desc!!}</td>
+      <td>{!! Str::limit($article->desc, 200)!!}</td>
       <td>{{$article->slug}}</td>
       <td>{{$article->id_user}}</td>
       <td>
@@ -53,7 +57,9 @@
 
 </div>
 
-
+<form action="{{ route('logout') }}" method="post" id="logout-form" style="display:none;">
+     @csrf
+</form>
 @include('layout/script')
 </body>
 </html>
