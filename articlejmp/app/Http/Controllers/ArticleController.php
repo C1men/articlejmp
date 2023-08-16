@@ -41,7 +41,6 @@ class ArticleController extends Controller
             'cover' => 'required',
             'id_kategori' => 'required',
             'desc' => 'required',
-            'id_user' => 'required'
         ]);
 
         if ($request->hasFile('cover')) {
@@ -61,7 +60,7 @@ class ArticleController extends Controller
             'id_kategori' => $request->input('id_kategori'),
             'desc' => $request->input('desc'),
             'slug' => Str::slug($request->input('judul')),
-            'id_user' => $request->input('id_user'),
+            'id_user' => auth()->id(),
         ]);
 
         return redirect()->route('artikel.index');
@@ -92,13 +91,12 @@ class ArticleController extends Controller
     {
         $request->validate([
             'judul' => 'required',
-            'cover' => 'required|image|mimes:jpeg,png,heic,svg,gif|max:2048',
             'alt' => 'required',
             'id_kategori' => 'required',
             'desc' => 'required'
         ]);
 
-        $artikel = Artikel::findOrFail($id);
+        $artikel = article::findOrFail($id);
 
         $fileName = $artikel->cover; // Tetap menggunakan nama file yang ada sebelumnya
 

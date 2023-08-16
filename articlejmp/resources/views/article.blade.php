@@ -66,7 +66,7 @@
                 <!-- Blog list Start -->
                 <div class="col-lg-8">
                     <div class="row g-5">
-                        @foreach ($article as $article)
+                        @foreach ($articles as $article)
                         <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
                         <div class="blog-item bg-light rounded overflow-hidden">
                             <a href="{{url('article', $article->slug)}}">
@@ -81,7 +81,7 @@
                                 </div> -->
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>{{$article->id_user}}</small>
+                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>{{$article-> user -> name}}</small>
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ date('d-m-Y', strtotime($article->created_at))}}</small>
                                     </div>
                                     <a href="{{url('article', $article->slug)}}">
@@ -96,18 +96,12 @@
                         <div class="col-12 wow slideInUp" data-wow-delay="0.1s">
                             <nav aria-label="Page navigation">
                               <ul class="pagination pagination-lg m-0">
-                                <li class="page-item disabled">
-                                  <a class="page-link rounded-0" href="#" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
-                                  </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                  <a class="page-link rounded-0" href="#" aria-label="Next">
-                                    <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
-                                  </a>
+                              {{-- Pagination --}}
+        <div class="d-flex justify-content-center">
+            {!! $articles->links() !!}
+        </div>
+
+                               
                                 </li>
                               </ul>
                             </nav>

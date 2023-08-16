@@ -6,13 +6,21 @@
 <div class="container mt-5">
 
     <div class="col-sm-12">
-    <button  class="btn btn-primary btn-lg mb-5" type="">
+      <div class="row">
+        <div class="col d-flex">
+        <button  class="btn btn-primary btn-lg m-2">
     <a class="text-light" href="{{route ('artikel.create')}}">Buat Article</a>
     </button>
+        <button  class="btn btn-primary btn-lg m-2">
+    <a class="text-light" href="{{route ('kategori.create')}}">Buat Kategori</a>
+    </button>
     <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat"
+                  <a href="#" class="btn btn-danger btn-lg m-2"
                   onclick="document.getElementById('logout-form').submit()">Sign out</a>
+</div>
+     
       </div>
+    
     <table class="table table-dark">
     <thead>
     <tr>
@@ -37,10 +45,10 @@
       <td>{{$article->judul}}</td>
       <td><img src="{{asset('img/' .$article->cover)}}" alt="" style="max-width:100px; max-height:75px;"></td>
       <td>{{$article->alt}}</td>
-      <td>{{$article->id_kategori}}</td>
+      <td>{{$article-> kategori -> nama_kategori}}</td>
       <td>{!! Str::limit($article->desc, 200)!!}</td>
       <td>{{$article->slug}}</td>
-      <td>{{$article->id_user}}</td>
+      <td>{{$article-> user -> name}}</td>
       <td>
       <form method="post" action="{{route('artikel.destroy',$article->id)}}">
           @method('delete')

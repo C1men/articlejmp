@@ -15,11 +15,11 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $article=article::paginate(6);
+        $articles=article::orderBy('id', 'DESC')->paginate(6);
         $kategori=kategori::all();
         $sidearticle=article::orderBy('id', 'DESC')->limit(5)->get();
 
-        return view ('article', compact('article', 'kategori', 'sidearticle'));
+        return view ('article', compact('articles', 'kategori', 'sidearticle'));
     }
 
     /**

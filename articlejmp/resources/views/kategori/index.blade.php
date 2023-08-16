@@ -6,9 +6,15 @@
 <div class="container mt-5">
 
     <div class="col-sm-12">
-    <button  class="btn btn-primary btn-lg mb-5" type="">
+      <div class="d-flex">
+      <button  class="btn btn-primary btn-lg m-2" type="">
     <a class="text-light" href="{{route ('kategori.create')}}">Buat Kategori</a>
     </button>
+    <button  class="btn btn-primary btn-lg m-2">
+    <a class="text-light" href="{{route ('artikel.create')}}">Buat Article</a>
+    </button>
+      </div>
+    
     <table class="table table-dark">
     <thead>
     <tr>

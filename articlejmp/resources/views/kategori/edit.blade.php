@@ -9,8 +9,8 @@
     </div>
     <!-- Spinner End -->
 
-<div class="col-lg-5">
-                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+<div class="col-lg-12">
+                    <div class="bg-primary rounded h-100 d-flex justify-content-center align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
                         <form method="POST" action="{{ route ('kategori.update', $kategori->id)}}">
                             @csrf
                             @method('put')

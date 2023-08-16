@@ -1,4 +1,33 @@
-<x-guest-layout>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Log in - Jaya Mulya Plastik</title>
+@include('layout/head')
+</head>
+<body>
+                    <div class="bg-primary rounded d-flex justify-content-center align-items-center p-5 wow zoomIn" data-wow-delay="0.9s" style="height:100%;">
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div class="row g-3">
+                           <div class="col-xl-12">
+                                    <input class="form-control bg-light border-0" placeholder="Email" style="height: 55px;" type="email" name="email" :value="old('email')" required autofocus autocomplete="username">
+                                </div>
+                                <div class="col-xl-12">
+                                    <input class="form-control bg-light border-0" placeholder="Password" style="height: 55px;"type="password" name="password" required autocomplete="current-password">
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-dark w-100 py-3" type="submit">Log In</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+@include ('layout/script')
+</body>
+</html>
+
+{{-- <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
@@ -45,4 +74,4 @@
             </div>
         </form>
     </x-authentication-card>
-</x-guest-layout>
+</x-guest-layout> --}}
