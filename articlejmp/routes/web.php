@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ArtikelController;
-
+use App\Models\article;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +18,17 @@ use App\Http\Controllers\ArtikelController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $articles = article::orderBy('id', 'DESC')->limit(3)->get();
+    return view('welcome', compact('articles'));
+})->name('welcome');
 
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
 
 
 

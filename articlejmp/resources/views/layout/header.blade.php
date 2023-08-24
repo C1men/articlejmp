@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <a href="{{url ('/article')}}" class="nav-item nav-link">Artikel</a>
-                    <a href="contact.html" class="nav-item nav-link">Kontak</a>
+                    <a href="{{url ('/contact')}}" class="nav-item nav-link">Kontak</a>
                 </div>
             </div>
         </nav>

@@ -15,11 +15,20 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        $articles=article::orderBy('id', 'DESC')->paginate(6);
-        $kategori=kategori::all();
-        $sidearticle=article::orderBy('id', 'DESC')->limit(5)->get();
+        $articles = article::orderBy('id', 'DESC')->paginate(6);
+        $category = '';
+        if (isset($_REQUEST['categoryID'])) {
+            $catID = base64_decode($_REQUEST['categoryID']);
+            $articles = article::where('id_kategori', $catID)->orderBy('id', 'DESC')->paginate(6);
+            $cat  = kategori::find($catID);
+            $category = "(" . $cat->nama_kategori . ")";
+        }
+        $kategori = kategori::all();
+        $sidearticle = article::orderBy('id', 'DESC')->limit(5)->get();
 
-        return view ('article', compact('articles', 'kategori', 'sidearticle'));
+
+
+        return view('article', compact('articles', 'kategori', 'sidearticle', 'category'));
     }
 
     /**
@@ -43,11 +52,11 @@ class ArtikelController extends Controller
      */
     public function show(string $slug)
     {
-        $detail=article::where(['slug'=>$slug])->first();
-        $kategori=kategori::all();
-        $sidearticle=article::orderBy('id', 'DESC')->limit(5)->get();
+        $detail = article::where(['slug' => $slug])->first();
+        $kategori = kategori::all();
+        $sidearticle = article::orderBy('id', 'DESC')->limit(5)->get();
 
-        return view ('detail', compact('detail', 'kategori', 'sidearticle'));
+        return view('detail', compact('detail', 'kategori', 'sidearticle'));
     }
 
     /**
@@ -55,7 +64,6 @@ class ArtikelController extends Controller
      */
     public function edit(string $id)
     {
-        
     }
 
     /**
@@ -63,7 +71,6 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
     }
 
     /**
@@ -71,6 +78,5 @@ class ArtikelController extends Controller
      */
     public function destroy(string $id)
     {
-        
     }
 }

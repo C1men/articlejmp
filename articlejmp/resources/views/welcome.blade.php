@@ -13,7 +13,7 @@
 
     <!-- Navbar & Carousel Start -->
     <div class="container-fluid position-relative p-0">
-        @include('layout/header')
+        @include('layout/headernew')
 
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -356,7 +356,40 @@
                 <h1 class="mb-0">Read The Latest Articles from Our Blog Post</h1>
             </div>
             <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                @if ($articles->count() > 0)
+                    @foreach ($articles as $article)
+                    <div class="col-md-4 wow slideInUp" data-wow-delay="0.1s">
+                        <div class="blog-item bg-light rounded overflow-hidden">
+                            <a href="{{url('article', $article->slug)}}">
+                                <div class="blog-img position-relative overflow-hidden">
+                                    <img class="img-fluid img-article" src="{{asset('img/' .$article->cover)}}" alt="{{$article->alt}}">
+                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="{{url('article', $article->slug)}}">{{$article->kategori->nama_kategori}}</a>
+                                </div>
+                            </a>
+                                <!-- <div class="blog-img position-relative overflow-hidden">
+                                    <img class="img-fluid" src="{{asset('img/' .$article->cover)}}" alt="{{$article->alt}}">
+                                    <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" href="{{url('article', $article->slug)}}">{{$article->kategori->nama_kategori}}</a>
+                                </div> -->
+                                <div class="p-4" style="height: 20rem; max-height: 20rem">
+                                    <div class="d-flex mb-3">
+                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>{{$article-> user -> name}}</small>
+                                        <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ date('d-m-Y', strtotime($article->created_at))}}</small>
+                                    </div>
+                                    <a href="{{url('article', $article->slug)}}">
+                                    <h4 class="mb-3">{{$article->judul}}</h4>
+                                    <p>{!! Str::limit($article->desc, 200)!!}</p>
+                                    <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                    @endforeach
+                @else
+                <div class="col text-center">
+                    <h5>Artikel belum tersedia</h5>
+                </div>
+                @endif
+                {{-- <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                     <div class="blog-item bg-green rounded overflow-hidden">
                         <div class="blog-img position-relative overflow-hidden">
                             <img class="img-fluid" src="img/blog-1.jpg" alt="">
@@ -406,7 +439,7 @@
                             <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

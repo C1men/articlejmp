@@ -15,9 +15,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $article=article::all();
+        $article = article::all();
 
-        return view ('artikel.index', compact('article'));
+        return view('artikel.index', compact('article'));
     }
 
     /**
@@ -25,9 +25,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $kategori=kategori::all();
-        
-        return view ('artikel.create', compact('kategori'));
+        $kategori = kategori::all();
+
+        return view('artikel.create', compact('kategori'));
     }
 
     /**
@@ -47,13 +47,12 @@ class ArticleController extends Controller
             $file = $request->file('cover');
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('img'), $filename);
-        }
-        else {
+        } else {
             return redirect()->back()->withInpiut()->withErrors(['gambar' => 'Image file is required']);
         }
 
 
-        article::create ([
+        article::create([
             'judul' => $request->input('judul'),
             'cover' => $filename,
             'alt' => $request->input('alt'),
@@ -80,8 +79,8 @@ class ArticleController extends Controller
     public function edit(string $id)
     {
         $artikel = article::find($id);
-        $kategori=kategori::all();
-        return view('artikel.edit', compact('artikel','kategori'));
+        $kategori = kategori::all();
+        return view('artikel.edit', compact('artikel', 'kategori'));
     }
 
     /**
@@ -117,7 +116,7 @@ class ArticleController extends Controller
                 }
             }
         }
-       
+
 
         $artikel->update([
             'id_kategori' => $request->input('id_kategori'),
