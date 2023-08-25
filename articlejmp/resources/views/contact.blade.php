@@ -21,7 +21,6 @@
 
 
     <!-- Navbar Start -->
-    @include('layout/headernew')
     <!-- Navbar End -->
 
     <div class="container-fluid position-relative p-0">
@@ -68,7 +67,7 @@
             </div>
             <div class="row g-5 mb-5">
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.1s">
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.1s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
                             <i class="fa fa-phone-alt text-white"></i>
                         </div>
@@ -79,7 +78,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.8s">
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.8s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
                             <i class="fa fa-map-marker-alt text-white"></i>
                         </div>
@@ -96,13 +95,13 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.4s">
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.4s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
                             <i class="fa fa-envelope-open text-white"></i>
                         </div>
-                        <div class="ps-4">
+                        <div class="ps-4" style="width: 15rem">
                             <h5 class="mb-2">Email to get free quote</h5>
-                            <h4 class="text-primary mb-0">jayamulyaplastik.business.com</h4>
+                            <h4 class="text-primary mb-0 email-company" style="font-size: 21px;">jayamulyaplastik.business.com</h4>
                         </div>
                     </div>
                 </div>
