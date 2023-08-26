@@ -198,6 +198,10 @@ h6,
     .email-company{
         font-size: 17.5px !important;
     }
+    .navbar-brand-new img{
+        /* width: 27%; */
+        width: 60px !important;
+    }
 }
 @media (max-width: 991.98px) {
     .sticky-top.navbar-dark {
