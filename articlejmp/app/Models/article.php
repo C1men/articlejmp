@@ -10,11 +10,11 @@ class article extends Model
     use HasFactory;
     protected $table = 'article';
 
-    Protected $guarded = [];
+    protected $guarded = [];
 
     public function kategori()
     {
-        return $this->belongsTo(Kategori::class, 'id_kategori');
+        return $this->belongsTo(kategori::class, 'id_kategori');
     }
 
     public function user()

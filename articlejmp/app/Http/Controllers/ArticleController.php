@@ -137,6 +137,12 @@ class ArticleController extends Controller
     public function destroy(string $id)
     {
         $artikel = article::findOrFail($id);
+
+        // tambahan dari elman (u/ menghapus gambar artikel karena sdh tidak digunakan => u/ menghemat space)
+        if ($artikel->cover != "") {
+            $file_path = public_path('img/') . $artikel->cover;
+            unlink($file_path);
+        }
         $artikel->delete();
 
         return redirect()->route('artikel.index');
