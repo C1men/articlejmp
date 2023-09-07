@@ -38,9 +38,9 @@
             <div class="nav-item dropdown">
                 <a href="{{url ('/product')}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{__('main.menu.product')}}</a>
                 <div class="dropdown-menu m-0">
-                    <a href="hdpe.html" class="dropdown-item">HDPE</a>
-                    <a href="pp.html" class="dropdown-item">PP</a>
-                    <a href="pet.html" class="dropdown-item">PET</a>
+                    <a href="{{url ('/HDPE')}}" class="dropdown-item">HDPE</a>
+                    <a href="{{url ('/PP')}}" class="dropdown-item">PP</a>
+                    <a href="{{url ('/PET')}}" class="dropdown-item">PET</a>
                 </div>
             </div>
             <a href="{{url ('/article')}}" class="nav-item nav-link {{ request()->routeIs('article.*') ? 'active' : '' }}">{{__('main.menu.article')}}</a>

@@ -12,7 +12,7 @@
                     <div class="nav-item dropdown">
                         <a href="{{url ('/product')}}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Produk</a>
                         <div class="dropdown-menu m-0">
-                            <a href="hdpe.html" class="dropdown-item">HDPE</a>
+                            <a href="{{url ('/HDPE')}}" class="dropdown-item">HDPE</a>
                             <a href="pp.html" class="dropdown-item">PP</a>
                             <a href="pet.html" class="dropdown-item">PET</a>
                         </div>

@@ -189,7 +189,7 @@ return [
 
     'languages' => [
         'en' => 'English',
-        'id' => 'Indonesian'
+        'id' => 'Indonesian',
     ],
 
 ];

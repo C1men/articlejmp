@@ -90,15 +90,6 @@
     
                 <!-- Sidebar Start -->
                 <div class="col-lg-4">
-                    <!-- Search Form Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <div class="input-group">
-                            <input type="text" class="form-control p-3" placeholder="Keyword">
-                            <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                        </div>
-                    </div>
-                    <!-- Search Form End -->
-    
                     <!-- Category Start -->
                     <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
@@ -129,12 +120,6 @@
                         @endforeach
                     </div>
                     <!-- Recent Post End -->
-    
-                    <!-- Image Start -->
-                    <div class="mb-5 wow slideInUp" data-wow-delay="0.1s">
-                        <img src="img/blog-1.jpg" alt="" class="img-fluid rounded">
-                    </div>
-                    <!-- Image End -->
                 </div>
                 <!-- Sidebar End -->
             </div>
@@ -142,6 +127,36 @@
     </div>
     <!-- Blog End -->
 
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+            <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">{{__('main.menu.subbis')}}</h5>
+                        <h1 class="mb-0">{{__('main.menu.descbis')}}</h1>
+                    </div>
+                   
+                    <p class="mb-4 " style="text-align: justify">{{__('main.menu.descbis1')}}</p>
+                    <a href="https://wa.me/+6282230303029">
+                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-white fa-lg"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-2">{{__('main.menu.contactus')}}</h5>
+                            <h4 class="text-primary mb-0">{{__('main.menu.notelp')}}</h4>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{{asset('JMP Biru/img/pphijau3.jpg')}}" alt="PP Hijau" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
 
     <!-- Vendor Start -->
     

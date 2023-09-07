@@ -61,29 +61,33 @@
     <!-- Contact Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Contact Us</h5>
-                <h1 class="mb-0">If You Have Any Query, Feel Free To Contact Us</h1>
-            </div>
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
+        <div class="section-title position-relative text-center pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">{{__('main.menu.subbis')}}</h5>
+                        <h1 class="mb-0">{{__('main.menu.descbis')}}</h1>
+                    </div>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 mb-5">
                     <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.1s">
+                    <a href="https://wa.me/+6282230303029">
+                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-phone-alt text-white"></i>
+                            <i class="fa fa-phone-alt text-white fa-lg"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+012 345 6789</h4>
+                            <h5 class="mb-2">{{__('main.menu.contactus')}}</h5>
+                            <h4 class="text-primary mb-0">{{__('main.menu.notelp')}}</h4>
                         </div>
                     </div>
+                    </a>
+                    </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 mb-5">
                     <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.8s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-map-marker-alt text-white"></i>
+                            <i class="fa fa-map-marker-alt text-white fa-lg"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="mb-2">Visit our office</h5>
+                            <h5 class="mb-2">{{__('main.menu.contactus1')}}</h5>
                             <a href="https://goo.gl/maps/LdYg8AnKfWuppPpS7">Jaya Mulya Plastik - Sidoarjo</a>
                             <br>
                             <a href="https://goo.gl/maps/LdYg8AnKfWuppPpS7">Jaya Mulya Plastik - Pati</a>
@@ -94,56 +98,76 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 mb-5">
                     <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.4s">
                         <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-envelope-open text-white"></i>
+                            <i class="fa fa-envelope-open text-white fa-lg" ></i>
                         </div>
                         <div class="ps-4" style="width: 15rem">
-                            <h5 class="mb-2">Email to get free quote</h5>
-                            <h4 class="text-primary mb-0 email-company" style="font-size: 21px;">jayamulyaplastik.business.com</h4>
+                            <h5 class="mb-2">{{__('main.menu.contactus2')}}</h5>
+                            <a href="mailto:jayamulyaplastik.business@gmail.com">
+                                <h4 class="text-primary mb-0 email-company" style="font-size: 21px;">jayamulyaplastik.business.com</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mt-5">
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.4s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fab fa-instagram fw-normal text-white" style='font-size:36px'></i>
+                        </div>
+                        <div class="ps-4" style="width: 15rem">
+                            <h5 class="mb-2">{{__('main.menu.contactus3')}}</h5>
+                            <a href="https://www.instagram.com/jayamulyaplastik/">
+                                <h4 class="text-primary mb-0 email-company" style="font-size: 21px;">jayamulyaplastik</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mt-5">
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.4s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                        <svg style="color: #ffffff"xmlns="http://www.w3.org/2000/svg" height="2.3em" viewBox="0 0 448 550"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fcfcfc}</style><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg>
+                        </div>
+                        <div class="ps-4" style="width: 15rem">
+                            <h5 class="mb-2">{{__('main.menu.contactus4')}}</h5>
+                            <a href="https://www.tiktok.com/@jayamulyaplastik">
+                                <h4 class="text-primary mb-0 email-company" style="font-size: 21px;">jayamulyaplastik</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mt-5">
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.4s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fab fa-facebook fw-normal text-white" style='font-size:36px'></i>
+                        </div>
+                        <div class="ps-4" style="width: 15rem">
+                            <h5 class="mb-2">{{__('main.menu.contactus5')}}</h5>
+                            <a href="https://www.facebook.com/profile.php?id=100094839246072">
+                                <h4 class="text-primary mb-0 email-company" style="font-size: 21px;">Jaya Mulya Plastik</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mt-5">
+                    <div class="d-flex align-items-start wow fadeIn" data-wow-delay="0.4s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fab fa-linkedin-in fw-normal text-white" style='font-size:36px'></i>
+                        </div>
+                        <div class="ps-4" style="width: 15rem">
+                            <h5 class="mb-2">{{__('main.menu.contactus6')}}</h5>
+                            <a href="https://www.linkedin.com/in/jayamulyaplastik/">
+                                <h4 class="text-primary mb-0 email-company" style="font-size: 21px;">Jaya Mulya Plastik</h4>
+                            </a>
                         </div>
                     </div>
                 </div>
               
             </div>
-            <div class="row g-5">
-                <div class="col-lg-5 wow slideInUp" data-wow-delay="0.3s">
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
-                            </div>
-                            <div class="col-12">
-                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
-                    <iframe class="position-relative rounded w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.686485663716!2d112.65549647532673!3d-7.38898537274104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e3579217204f%3A0xa637a5bfbf3d5a94!2sJaya%20Mulya%20Plastik%20-%20Sukodono!5e0!3m2!1sid!2sid!4v1690544526163!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
-                </div>
-            </div>
         </div>
     </div>
-    <!-- Contact End -->
 
-
-    <!-- Vendor Start -->
-   
-    <!-- Vendor End -->
     
 
     <!-- Footer Start -->

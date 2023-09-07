@@ -30,6 +30,22 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::get('/product', function () {
+    return view('product');
+})->name('product');
+
+Route::get('/HDPE', function () {
+    return view('HDPE');
+})->name('HDPE');
+
+Route::get('/PP', function () {
+    return view('PP');
+})->name('PP');
+
+Route::get('/PET', function () {
+    return view('PET');
+})->name('PET');
+
 
 
 Route::resource('kategori', KategoriController::class);
